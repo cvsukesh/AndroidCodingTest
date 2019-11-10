@@ -1,8 +1,8 @@
-package com.walmartlabs.code.network.utils;
+package com.walmartlabs.code.utils;
 
 import okhttp3.MediaType;
 
-public interface NetworkConstants {
+public interface Constants {
 
     String BASE_URL = "https://mobile-tha-server.firebaseapp.com";
 
@@ -11,4 +11,6 @@ public interface NetworkConstants {
     MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     int SUCCESS = 200;
+
+    String POSITION = "Position";
 }

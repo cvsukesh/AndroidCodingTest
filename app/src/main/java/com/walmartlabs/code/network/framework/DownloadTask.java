@@ -8,7 +8,7 @@ import android.util.Log;
 
 import com.walmartlabs.code.network.utils.ApiRequestBuilder;
 import com.walmartlabs.code.network.utils.MethodType;
-import com.walmartlabs.code.network.utils.NetworkConstants;
+import com.walmartlabs.code.utils.Constants;
 import com.walmartlabs.code.network.utils.NetworkListener;
 import com.walmartlabs.code.network.utils.NetworkResponse;
 
@@ -109,7 +109,7 @@ public class DownloadTask extends AsyncTask<Void,Void, Message> {
 
         if (response != null) {
             ResponseBody responseBody = response.body();
-            if (mMediaType == NetworkConstants.JSON) {
+            if (mMediaType == Constants.JSON) {
                 mNetworkResponse.setStringResponse(
                         responseBody != null ? convertInputStreamToString(responseBody.byteStream()) : "");
             }
@@ -117,7 +117,7 @@ public class DownloadTask extends AsyncTask<Void,Void, Message> {
 
             if (response.isSuccessful()) {
                 message.obj = mNetworkResponse;
-                message.arg1 = NetworkConstants.SUCCESS;
+                message.arg1 = Constants.SUCCESS;
             } else {
                 NetworkError networkError = new NetworkError();
                 networkError.setErrorCode(String.valueOf(response.code()));

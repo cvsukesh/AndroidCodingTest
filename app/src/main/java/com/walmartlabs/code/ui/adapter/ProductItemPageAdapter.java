@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.walmartlabs.code.R;
 import com.walmartlabs.code.model.ProductItem;
-import com.walmartlabs.code.network.utils.NetworkConstants;
+import com.walmartlabs.code.utils.Constants;
 import com.walmartlabs.code.productdata.ProductDataRepository;
 import com.walmartlabs.code.ui.activity.HomeActivity;
 import com.walmartlabs.code.ui.activity.ProductDetailActivity;
@@ -48,7 +48,7 @@ public class ProductItemPageAdapter extends PagedListAdapter<ProductItem, Produc
             return;
         }
 
-        String imageUrl = NetworkConstants.BASE_URL + productItem.getProductImage();
+        String imageUrl = Constants.BASE_URL + productItem.getProductImage();
         GlideImageDownloader.loadImage(mContext, imageUrl, holder.mProductImage);
 
         holder.mProductTitle.setText(productItem.getProductName());
@@ -82,7 +82,7 @@ public class ProductItemPageAdapter extends PagedListAdapter<ProductItem, Produc
         if (mContext != null) {
             ProductDataRepository.getInstance().setProductItemPagedList(getCurrentList());
             Intent intent = new Intent(mContext, ProductDetailActivity.class);
-            intent.putExtra("POSITION", position);
+            intent.putExtra(Constants.POSITION, position);
             mContext.startActivity(intent);
         }
     }

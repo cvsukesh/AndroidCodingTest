@@ -30,6 +30,7 @@ public class ProductDataSource extends PageKeyedDataSource<Integer, ProductItem>
         ProductDataRepository.getInstance().executeProductApi(FIRST_PAGE, PAGE_SIZE, new JsonParsingListener() {
             @Override
             public void onParseSuccess(ProductDataResponse productDataResponse) {
+                ProductDataRepository.getInstance().setTotalProducts(productDataResponse.getTotalProducts());
                 callback.onResult(productDataResponse.getProducts(), null, FIRST_PAGE + 1);
             }
 

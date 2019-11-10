@@ -12,7 +12,7 @@ import android.widget.RatingBar;
 
 import com.walmartlabs.code.R;
 import com.walmartlabs.code.model.ProductItem;
-import com.walmartlabs.code.network.utils.NetworkConstants;
+import com.walmartlabs.code.utils.Constants;
 import com.walmartlabs.code.ui.WLApplication;
 import com.walmartlabs.code.ui.view.WLItemTextView;
 import com.walmartlabs.code.ui.view.GlideImageDownloader;
@@ -50,7 +50,7 @@ public class ProductDetailsFragment extends Fragment {
         productRatingCount.setText(String.valueOf(productItem.getReviewCount()));
 
         ImageView imageView = view.findViewById(R.id.product_image);
-        String imageUrl = NetworkConstants.BASE_URL + productItem.getProductImage();
+        String imageUrl = Constants.BASE_URL + productItem.getProductImage();
         GlideImageDownloader.loadImage(getActivity(), imageUrl, imageView);
 
         WLItemTextView price = view.findViewById(R.id.product_prizes);

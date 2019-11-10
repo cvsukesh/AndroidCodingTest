@@ -44,7 +44,7 @@ public abstract class ProductDetailPagerAdapter<T> extends FragmentStatePagerAda
 
     @Override
     public int getCount() {
-        return mPagedList != null ? mPagedList.size() : 0;
+        return ProductDataRepository.getInstance().getTotalProducts();
     }
 
 }
