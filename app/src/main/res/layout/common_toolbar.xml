@@ -1,0 +1,11 @@
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/wl_dark_blue"
+    app:titleTextColor="@android:color/white"
+    android:textAlignment="gravity"
+    app:titleTextAppearance="@style/bc_roboto_h1_black"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
+    app:theme="@style/common_toolbarStyle" />
