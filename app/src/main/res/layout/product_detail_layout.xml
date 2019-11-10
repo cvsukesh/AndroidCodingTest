@@ -11,29 +11,19 @@
         style="@style/bc_roboto_h1_black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.walmartlabs.code.ui.view.WLItemTextView
-        android:id="@+id/product_rating_count"
-        style="@style/bc_roboto_h2_black"
+    <include
+        android:id="@+id/rating_layout"
+        layout="@layout/item_rating_count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/padding_10dp"
         android:layout_marginTop="@dimen/padding_10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/product_rating_bar"
-        app:layout_constraintTop_toBottomOf="@+id/product_title" />
-
-    <RatingBar
-        android:id="@+id/product_rating_bar"
-        style="@style/Widget.AppCompat.RatingBar.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:layout_marginTop="@dimen/padding_10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_title" />
 
     <ImageView
@@ -43,7 +33,7 @@
         android:layout_marginTop="@dimen/padding_20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_rating_count"
+        app:layout_constraintTop_toBottomOf="@+id/rating_layout"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <com.walmartlabs.code.ui.view.WLItemTextView

@@ -1,6 +1,7 @@
 package com.walmartlabs.code.model;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 import androidx.annotation.Nullable;
 
@@ -76,7 +77,7 @@ public class ProductItem implements Serializable {
     }
 
     public float getReviewRating() {
-        return reviewRating;
+        return getFormattedReview(reviewRating);
     }
 
     public void setReviewRating(float reviewRating) {
@@ -102,5 +103,9 @@ public class ProductItem implements Serializable {
     @Override
     public boolean equals(@Nullable Object obj) {
         return super.equals(obj);
+    }
+
+    private float getFormattedReview(float review) {
+        return Float.parseFloat(new DecimalFormat("##.#").format(review));
     }
 }

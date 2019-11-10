@@ -46,6 +46,9 @@ public class ProductDetailsFragment extends Fragment {
         RatingBar ratingBar = view.findViewById(R.id.product_rating_bar);
         ratingBar.setRating(productItem.getReviewRating());
 
+        WLItemTextView productReview = view.findViewById(R.id.product_review_value);
+        productReview.setText(String.valueOf(productItem.getReviewRating()));
+
         WLItemTextView productRatingCount = view.findViewById(R.id.product_rating_count);
         productRatingCount.setText(String.valueOf(productItem.getReviewCount()));
 

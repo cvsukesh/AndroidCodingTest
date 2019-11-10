@@ -53,7 +53,7 @@ public class ProductItemPageAdapter extends PagedListAdapter<ProductItem, Produc
 
         holder.mProductTitle.setText(productItem.getProductName());
         holder.mProductPrize.setText(productItem.getPrice());
-        holder.mProductReview.setText(getFormattedReview(productItem.getReviewRating()));
+        holder.mProductReview.setText(String.valueOf(productItem.getReviewRating()));
         holder.mProductRatingCount.setText(String.valueOf(productItem.getReviewCount()));
         holder.mRatingBar.setRating(productItem.getReviewRating());
     }
@@ -72,10 +72,6 @@ public class ProductItemPageAdapter extends PagedListAdapter<ProductItem, Produc
             return oldItem.equals(newItem);
         }
     };
-
-    private String getFormattedReview(float review) {
-        return String.valueOf(Float.parseFloat(new DecimalFormat("##.#").format(review)));
-    }
 
     @Override
     public void onItemClickListener(int position, View view) {
