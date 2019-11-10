@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 
 import com.walmartlabs.code.R;
 import com.walmartlabs.code.model.ProductItem;
+import com.walmartlabs.code.utils.DeviceUtils;
 import com.walmartlabs.code.viewmodel.ProductViewModel;
 import com.walmartlabs.code.ui.activity.HomeActivity;
 import com.walmartlabs.code.ui.adapter.ProductItemPageAdapter;
@@ -20,7 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.paging.PagedList;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
@@ -57,7 +58,7 @@ public class ProductItemListFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), DeviceUtils.isXLargeDevice() ? 3 : 1));
         mRecyclerView.setHasFixedSize(true);
         mProductItemPageAdapter = new ProductItemPageAdapter((HomeActivity) getActivity());
         mRecyclerView.setAdapter(mProductItemPageAdapter);
