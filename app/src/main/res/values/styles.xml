@@ -8,39 +8,40 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="bc_typeface_roboto_bold">
+    <style name="wl_typeface_roboto_bold">
         <item name="menu_one_typeface">roboto_bold</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="bc_typeface_roboto_regular">
+    <style name="wl_typeface_roboto_regular">
         <item name="menu_one_typeface">roboto_regular</item>
     </style>
 
-    <style name="bc_typeface_roboto_medium">
+    <style name="wl_typeface_roboto_medium">
         <item name="menu_one_typeface">roboto_medium</item>
     </style>
 
-    <style name="bc_roboto_h1_black_bold" parent="bc_typeface_roboto_bold">
+    <style name="wl_roboto_h1_black_bold" parent="wl_typeface_roboto_bold">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="bc_roboto_h1_black" parent="bc_typeface_roboto_regular">
+    <style name="bc_roboto_h1_black" parent="wl_typeface_roboto_regular">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="bc_roboto_h2_black" parent="bc_typeface_roboto_medium">
+    <style name="bc_roboto_h2_black" parent="wl_typeface_roboto_medium">
         <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="bc_roboto_h2_white" parent="bc_typeface_roboto_medium">
+    <style name="bc_roboto_h2_white" parent="wl_typeface_roboto_medium">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="bc_roboto_h2_white_bold" parent="bc_typeface_roboto_bold">
+    <style name="bc_roboto_h2_white_bold" parent="wl_typeface_roboto_bold">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>

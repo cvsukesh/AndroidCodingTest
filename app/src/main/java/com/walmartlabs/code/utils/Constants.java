@@ -13,4 +13,6 @@ public interface Constants {
     int SUCCESS = 200;
 
     String POSITION = "Position";
+
+    String PRODUCT_DESCRIPTION = "Description";
 }

@@ -19,7 +19,7 @@
         android:id="@+id/action_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/bc_roboto_h1_black_bold"
+        style="@style/wl_roboto_h1_black_bold"
         android:gravity="center"
         android:textColor="@android:color/white"
         android:text="Walmart Labs"/>

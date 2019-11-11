@@ -1,5 +1,6 @@
 package com.walmartlabs.code.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
@@ -9,9 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import com.walmartlabs.code.R;
 import com.walmartlabs.code.model.ProductItem;
+import com.walmartlabs.code.ui.activity.ItemAboutActivity;
 import com.walmartlabs.code.utils.Constants;
 import com.walmartlabs.code.ui.WLApplication;
 import com.walmartlabs.code.ui.view.WLItemTextView;
@@ -36,7 +39,7 @@ public class ProductDetailsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.product_detail_layout, container, false);
+        View view = inflater.inflate(R.layout.fragment_product_detail, container, false);
         initView(view);
         return view;
     }
@@ -69,5 +72,18 @@ public class ProductDetailsFragment extends Fragment {
         WLItemTextView description = view.findViewById(R.id.product_description);
         description.setText(!TextUtils.isEmpty(productItem.getShortDescription()) ?
                 Html.fromHtml(productItem.getShortDescription()) : "");
+
+        description.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ItemAboutActivity.class);
+                if (!TextUtils.isEmpty(productItem.getLongDescription())) {
+                    intent.putExtra(Constants.PRODUCT_DESCRIPTION, productItem.getLongDescription());
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(WLApplication.getAppContext(), "Description not available", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

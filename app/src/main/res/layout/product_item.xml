@@ -27,7 +27,7 @@
 
     <com.walmartlabs.code.ui.view.WLItemTextView
         android:id="@+id/product_prizes"
-        style="@style/bc_roboto_h1_black_bold"
+        style="@style/wl_roboto_h1_black_bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/padding_10dp"

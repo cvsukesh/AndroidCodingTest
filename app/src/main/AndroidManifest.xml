@@ -25,6 +25,10 @@
         <activity
             android:name=".ui.activity.ProductDetailActivity"
             android:configChanges="orientation|screenSize" />
+
+        <activity
+            android:name=".ui.activity.ItemAboutActivity"
+            android:configChanges="orientation|screenSize" />
     </application>
 
 </manifest>

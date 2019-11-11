@@ -3,7 +3,7 @@
 
     <string name="rating_and_review">Rating: %1$s, Review: %2$s </string>
     <string name="add_to_cart">Add to Cart</string>
-    <string name="about_this_item">About This Item</string>
     <string name="list_action_title">Walmart Labs</string>
     <string name="detail_action_title">Product Detail</string>
+    <string name="about_this_item">About This Item</string>
 </resources>
