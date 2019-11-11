@@ -1,4 +1,4 @@
-# Android Coding Test 
+# Android Coding 
 Total screens
 1. Welcome Splash Screen
 2. Product Item List Screen
