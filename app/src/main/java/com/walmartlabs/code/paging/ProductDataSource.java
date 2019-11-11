@@ -26,6 +26,8 @@ public class ProductDataSource extends PageKeyedDataSource<Integer, ProductItem>
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull final LoadInitialCallback<Integer, ProductItem> callback) {
         Log.d(TAG, "loadInitial: params loading the initial data.");
+
+        // Requesting the first set of data page 1 with 30  items.
         ProductDataRepository.getInstance().executeProductApi(FIRST_PAGE, PAGE_SIZE, new JsonParsingListener() {
             @Override
             public void onParseSuccess(ProductDataResponse productDataResponse) {
@@ -41,6 +43,8 @@ public class ProductDataSource extends PageKeyedDataSource<Integer, ProductItem>
     @Override
     public void loadBefore(@NonNull final LoadParams<Integer> params, @NonNull final LoadCallback<Integer, ProductItem> callback) {
         Log.d(TAG, "loadBefore: load previous data.");
+
+        // Scroll to top will load the previous data.
         ProductDataRepository.getInstance().executeProductApi(params.key, PAGE_SIZE, new JsonParsingListener() {
             @Override
             public void onParseSuccess(ProductDataResponse productDataResponse) {
@@ -60,6 +64,8 @@ public class ProductDataSource extends PageKeyedDataSource<Integer, ProductItem>
     @Override
     public void loadAfter(@NonNull final LoadParams<Integer> params, @NonNull final LoadCallback<Integer, ProductItem> callback) {
         Log.d(TAG, "loadAfter: load the next available data");
+
+        // Scroll down to load the next set of data.
         ProductDataRepository.getInstance().executeProductApi(params.key, PAGE_SIZE, new JsonParsingListener() {
             @Override
             public void onParseSuccess(ProductDataResponse productDataResponse) {
