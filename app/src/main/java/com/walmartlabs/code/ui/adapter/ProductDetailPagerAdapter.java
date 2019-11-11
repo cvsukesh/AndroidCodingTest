@@ -1,13 +1,7 @@
 package com.walmartlabs.code.ui.adapter;
 
-import android.view.ViewGroup;
-
 import com.walmartlabs.code.model.ProductItem;
-import com.walmartlabs.code.paging.PagerCallBack;
 import com.walmartlabs.code.productdata.ProductDataRepository;
-
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
