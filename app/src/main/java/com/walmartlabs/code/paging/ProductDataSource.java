@@ -19,14 +19,13 @@ public class ProductDataSource extends PageKeyedDataSource<Integer, ProductItem>
 
     private static final String TAG = "ProductDataSource_SUKKU";
 
-    public static final int FIRST_PAGE = 1;
+    private static final int FIRST_PAGE = 1;
 
     public static final int PAGE_SIZE = 30;
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull final LoadInitialCallback<Integer, ProductItem> callback) {
         Log.d(TAG, "loadInitial: params loading the initial data.");
-        ProductDataRepository.getInstance().setCurrentPage(FIRST_PAGE);
         ProductDataRepository.getInstance().executeProductApi(FIRST_PAGE, PAGE_SIZE, new JsonParsingListener() {
             @Override
             public void onParseSuccess(ProductDataResponse productDataResponse) {
@@ -42,7 +41,6 @@ public class ProductDataSource extends PageKeyedDataSource<Integer, ProductItem>
     @Override
     public void loadBefore(@NonNull final LoadParams<Integer> params, @NonNull final LoadCallback<Integer, ProductItem> callback) {
         Log.d(TAG, "loadBefore: load previous data.");
-        ProductDataRepository.getInstance().setCurrentPage(params.key);
         ProductDataRepository.getInstance().executeProductApi(params.key, PAGE_SIZE, new JsonParsingListener() {
             @Override
             public void onParseSuccess(ProductDataResponse productDataResponse) {
@@ -62,7 +60,6 @@ public class ProductDataSource extends PageKeyedDataSource<Integer, ProductItem>
     @Override
     public void loadAfter(@NonNull final LoadParams<Integer> params, @NonNull final LoadCallback<Integer, ProductItem> callback) {
         Log.d(TAG, "loadAfter: load the next available data");
-        ProductDataRepository.getInstance().setCurrentPage(params.key);
         ProductDataRepository.getInstance().executeProductApi(params.key, PAGE_SIZE, new JsonParsingListener() {
             @Override
             public void onParseSuccess(ProductDataResponse productDataResponse) {

@@ -35,8 +35,6 @@ public class ProductDataRepository implements NetworkListener {
 
     private int totalProducts;
 
-    private int currentPage = 1;
-
     public void executeProductApi(int pageNumber, int pageSize, JsonParsingListener jsonParsingListener) {
         ApiRequestBuilder apiRequestBuilder = createProductListAPI(pageNumber, pageSize);
         new DownloadTask(apiRequestBuilder).execute();
@@ -86,14 +84,6 @@ public class ProductDataRepository implements NetworkListener {
 
     public void setTotalProducts(int totalProducts) {
         this.totalProducts = totalProducts;
-    }
-
-    public int getCurrentPage() {
-        return currentPage;
-    }
-
-    public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
     }
 
     public PagedList<ProductItem> getProductItemPagedList() {
