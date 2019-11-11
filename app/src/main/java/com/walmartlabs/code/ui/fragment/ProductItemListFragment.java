@@ -5,10 +5,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.walmartlabs.code.R;
 import com.walmartlabs.code.model.ProductItem;
+import com.walmartlabs.code.ui.view.WLItemTextView;
 import com.walmartlabs.code.utils.DeviceUtils;
 import com.walmartlabs.code.viewmodel.ProductViewModel;
 import com.walmartlabs.code.ui.activity.HomeActivity;
@@ -48,11 +50,28 @@ public class ProductItemListFragment extends Fragment {
     }
 
     private void initView(View view) {
-        Toolbar toolbar = view.findViewById(R.id.toolbar);
-        toolbar.setTitle(getResources().getString(R.string.list_action_title));
+        setActionBar(view);
         mRecyclerView = view.findViewById(R.id.recycler_view);
         mProgressBar = view.findViewById(R.id.progressBar);
         mProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * Init Action bar
+     */
+    private void setActionBar(View view) {
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        WLItemTextView actionTitle = toolbar.findViewById(R.id.action_title);
+        ImageView imageView = toolbar.findViewById(R.id.action_image);
+        actionTitle.setText(getResources().getText(R.string.list_action_title));
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (getActivity() != null) {
+                    getActivity().finish();
+                }
+            }
+        });
     }
 
     @Override

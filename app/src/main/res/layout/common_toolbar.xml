@@ -5,7 +5,24 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@color/wl_dark_blue"
     app:titleTextColor="@android:color/white"
-    android:textAlignment="gravity"
     app:titleTextAppearance="@style/bc_roboto_h1_black"
     app:popupTheme="@style/AppTheme.PopupOverlay"
-    app:theme="@style/common_toolbarStyle" />
+    app:theme="@style/common_toolbarStyle" >
+
+    <ImageView
+        android:id="@+id/action_image"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/baseline_home_white"/>
+
+    <com.walmartlabs.code.ui.view.WLItemTextView
+        android:id="@+id/action_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/bc_roboto_h1_black_bold"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:text="Walmart Labs"/>
+
+
+</androidx.appcompat.widget.Toolbar>

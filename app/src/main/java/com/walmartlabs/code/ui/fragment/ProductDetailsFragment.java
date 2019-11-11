@@ -22,6 +22,9 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+/**
+ * Product detail screen displaying in a full screen
+ */
 public class ProductDetailsFragment extends Fragment {
 
     private ProductItem productItem;
