@@ -62,6 +62,7 @@ public class ProductItemListFragment extends Fragment {
     private void setActionBar(View view) {
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         WLItemTextView actionTitle = toolbar.findViewById(R.id.action_title);
+        actionTitle.setText(R.string.list_action_title);
         ImageView imageView = toolbar.findViewById(R.id.action_image);
         actionTitle.setText(getResources().getText(R.string.list_action_title));
         imageView.setOnClickListener(new View.OnClickListener() {
